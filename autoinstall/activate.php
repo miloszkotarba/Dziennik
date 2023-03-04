@@ -98,5 +98,6 @@ else {
 
 $pol->close();
 
-unset($_SESSION['error']);
+session_unset();
+session_destroy();
 ?>
