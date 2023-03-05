@@ -15,7 +15,7 @@ E-dziennik jest projektem zaliczeniowym na zajęcia "Inżynieria Oprogramowania"
 
 - Miłosz Kotarba [@miloszkotarba](https://www.github.com/miloszkotarba)
 - Piotr Komorowski  [@Piotrekk00](https://www.github.com/Piotrekk00)
-- Jan Wójcikowski
+- Jan Wójcikowski   [@JanWojcikowski](https://www.github.com/JanWojcikowski)
 
 
 ## Instalacja
