@@ -98,6 +98,18 @@ else {
 
 $pol->close();
 
+///zapis credentials do bazy
+$to_store = '<?php
+define("DB_HOST","' . $db_host . '");
+define("DB_USER","' . $db_username . '");
+define("DB_PASSWORD","' . $db_password . '");
+define("DB_NAME","' . $db_name . '");
+?>';
+
+$url = dirname(__FILE__, 2) . '/config.php';
+file_put_contents("$url", "$to_store");
+
+///koniec sesji
 session_unset();
 session_destroy();
 ?>
