@@ -114,7 +114,6 @@ $plik = file_put_contents("$url", "$to_store");
 if($plik === false)
 {
     $_SESSION['error'] = "<b>Błąd: </b>Brak uprawnień do zapisu plików";
-    ob_start();
     header('Location: index.php');
     ob_end_flush();
 }
