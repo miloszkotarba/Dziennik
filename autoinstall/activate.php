@@ -93,8 +93,9 @@ if (!$pol->query($sql)) {
 $sql2 = "INSERT INTO `users` (`id`, `nazwisko`, `imie`, `email`, `password`) VALUES (NULL, '$nazwisko','$imie','$email','$haslo2');";
 if ($pol->query($sql2)) echo "Wszystko ok";
 else {
-    $_SESSION['error'] = "Błąd połączenia z bazą danych! Brak uprawnień: <b>Insert_priv</b>.";
+
     header('Location: index.php');
+    $_SESSION['error'] = "Błąd połączenia z bazą danych! Brak uprawnień: <b>Insert_priv</b>.";
     $pol->close();
     exit();
 };
@@ -113,8 +114,8 @@ $url = dirname(__FILE__, 2) . '/config.php';
 $plik = file_put_contents("$url", "$to_store");
 if($plik === false)
 {
-    $_SESSION['error'] = "<b>Błąd: </b>Brak uprawnień do zapisu plików";
     header('Location: index.php');
+    $_SESSION['error'] = "<b>Błąd: </b>Brak uprawnień do zapisu plików";
     ob_end_flush();
 }
 
