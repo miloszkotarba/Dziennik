@@ -72,7 +72,10 @@ $pol = new mysqli("$db_host", "$db_username", "$db_password", "$db_name");
 
 if ($pol->connect_errno != 0) {
     $_SESSION['error'] = "Błąd połączenia z bazą danych!";
+    ob_start();
     header('Location: index.php');
+    ob_end_flush();
+    
     exit();
 }
 
