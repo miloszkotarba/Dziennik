@@ -110,7 +110,14 @@ define("DB_NAME","' . $db_name . '");
 ?>';
 
 $url = dirname(__FILE__, 2) . '/config.php';
-file_put_contents("$url", "$to_store");
+$plik = file_put_contents("$url", "$to_store");
+if($plik === false)
+{
+    $_SESSION['error'] = "<b>Błąd: </b>Brak uprawnień do zapisu plików";
+    ob_start();
+    header('Location: index.php');
+    ob_end_flush();
+}
 
 ///koniec sesji
 session_unset();
